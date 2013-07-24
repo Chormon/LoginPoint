@@ -1,4 +1,5 @@
 name: LoginPoint
+description: A Bukkit plugin that allows you to set a point, where players will be teleported after login.
 main: pl.chormon.LoginPoint.LoginPoint
 author: Chormon
 version: 1.0.0
