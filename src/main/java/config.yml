@@ -1,0 +1,10 @@
+messages:
+  notEnoughParams: red%Not enough arguments!
+  tooManyParams: red%To many arguments!
+  setLoginPoint: green%Login point has been set to world "{3}" (x={0}, y={1}, z={2}).
+  noPerimissions: red%You don't have permissions to execute that command!
+loginpoint:
+  world: world
+  x: 0
+  y: -1
+  z: 0
