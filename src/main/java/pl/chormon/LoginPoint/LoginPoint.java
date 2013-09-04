@@ -10,6 +10,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -17,19 +18,18 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @author Chormon
  */
 public final class LoginPoint extends JavaPlugin {
-    
-    private static String version = "1.0.0.";
-    private static int build = 0;
 
     @Override
     public void onDisable() {
-        getLogger().info("LoginPoint " + version + build + " disabled!");
+        PluginDescriptionFile pdf = this.getDescription();
+        getLogger().info(pdf.getName() + " " + pdf.getVersion() + " disabled!");
         HandlerList.unregisterAll(this);
     }
 
     @Override
     public void onEnable() {
-        getLogger().info("LoginPoint " + version + build + " enabled!");
+        PluginDescriptionFile pdf = this.getDescription();
+        getLogger().info(pdf.getName() + " " + pdf.getVersion() + " enabled!");
         new LoginListener(this);
         Config.initConfig(this);
         Location l = Config.getLoginPoint();

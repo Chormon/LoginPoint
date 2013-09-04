@@ -9,7 +9,7 @@
     <version>1.0.0.${buildNumber}</version>
     <url>http://chormon.pl</url>
     <inceptionYear>2013</inceptionYear>
-    <description></description>
+    <description>A Bukkit plugin that allows you to set a point, where players will be teleported after login.</description>
 
     <!-- Build properties -->
     <properties>
@@ -74,7 +74,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.6.2-R0.1-SNAPSHOT</version>
+            <version>1.6.2-R0.2-SNAPSHOT</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
