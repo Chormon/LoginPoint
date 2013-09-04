@@ -4,6 +4,7 @@
  */
 package pl.chormon.LoginPoint;
 
+import java.util.logging.Level;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -22,14 +23,14 @@ public final class LoginPoint extends JavaPlugin {
     @Override
     public void onDisable() {
         PluginDescriptionFile pdf = this.getDescription();
-        getLogger().info(pdf.getName() + " " + pdf.getVersion() + " disabled!");
+        getLogger().log(Level.INFO, "{0} {1} disabled!", new Object[]{pdf.getName(), pdf.getVersion()});
         HandlerList.unregisterAll(this);
     }
 
     @Override
     public void onEnable() {
         PluginDescriptionFile pdf = this.getDescription();
-        getLogger().info(pdf.getName() + " " + pdf.getVersion() + " enabled!");
+        getLogger().log(Level.INFO, "{0} {1} enabled!", new Object[]{pdf.getName(), pdf.getVersion()});
         new LoginListener(this);
         Config.initConfig(this);
         Location l = Config.getLoginPoint();

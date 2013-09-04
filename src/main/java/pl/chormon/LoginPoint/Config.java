@@ -30,7 +30,7 @@ public class Config {
         return getMessage(path, null);
     }
 
-    public static String getMessage(String path, Object params) {
+    public static String getMessage(String path, Object... params) {
         String message = plugin.getConfig().getString("messages." + path);
         for (ChatColor color : ChatColor.values()) {
             String key = color.name().toLowerCase() + "%";
@@ -62,14 +62,12 @@ public class Config {
         plugin.getConfig().set("loginpoint.y", (int)location.getY());
         plugin.getConfig().set("loginpoint.z", ((int)location.getZ()));
         plugin.saveConfig();
-        Object[] params = new Object[]{location.getX(), location.getY(), location.getZ(), location.getWorld().getName()};
-        String info = Config.getMessage("setLoginPoint", params);
+        String info = Config.getMessage("setLoginPoint", location.getX(), location.getY(), location.getZ(), location.getWorld().getName());
         plugin.getLogger().info(info);
     }
 
     public static void setLoginPoint(Location location, CommandSender sender) {
         setLoginPoint(location);
-        Object[] params = new Object[]{location.getX(), location.getY(), location.getZ(), location.getWorld().getName()};
-        sender.sendMessage(Config.getMessage("setLoginPoint", params));
+        sender.sendMessage(Config.getMessage("setLoginPoint", location.getX(), location.getY(), location.getZ(), location.getWorld().getName()));
     }
 }

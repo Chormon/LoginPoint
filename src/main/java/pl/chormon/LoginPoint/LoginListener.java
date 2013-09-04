@@ -4,6 +4,7 @@
  */
 package pl.chormon.LoginPoint;
 
+import java.util.logging.Level;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -45,7 +46,7 @@ public class LoginListener implements Listener {
         @Override
         public void run() {
           boolean teleported = player.teleport(location);
-          if(!teleported) plugin.getLogger().info(ChatColor.RED + "Failed to teleport player " + player.getName());
+          if(!teleported) plugin.getLogger().log(Level.INFO, "{0}Failed to teleport player {1}", new Object[]{ChatColor.RED, player.getName()});
         }
     }
     
